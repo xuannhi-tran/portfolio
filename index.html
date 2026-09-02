@@ -15,8 +15,66 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <header>
+    <!-- Sticky Blurred Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="container navbar__container">
+        <a href="#home" class="navbar__brand">
+          <div class="navbar__brand-avatar"></div>
+          <span class="navbar__brand-name">Vo Xuan Nhi Tran</span>
+          <span class="navbar__brand-status">
+            <span class="navbar__brand-dot"></span> Available
+          </span>
+        </a>
+
+        <ul class="navbar__nav">
+          <li><a href="#about" class="navbar__link">About</a></li>
+          <li><a href="#skills" class="navbar__link">Skills</a></li>
+          <li><a href="#projects" class="navbar__link">Projects</a></li>
+          <li><a href="#contact" class="navbar__link">Contact</a></li>
+        </ul>
+
+        <div class="navbar__actions">
+          <a
+            href="https://github.com/xuannhi-tran"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="navbar__social-link"
+            aria-label="GitHub Profile"
+            title="GitHub"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+          </a>
+          <a
+            href="./assets/CV_Resume.pdf"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="navbar__resume-btn"
+            download
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>CV</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header / Hero -->
+    <header id="home">
       <div class="container header__container">
         <!-- Left column -->
         <div class="header__column--left">
@@ -30,7 +88,7 @@
             </div>
             <p>
               Wish to apply for
-              <span>Junior Software Developer/ Software Internship</span>
+              <span>Junior Software Developer / Software Internship</span>
             </p>
           </div>
         </div>
@@ -39,23 +97,27 @@
           <h2 class="header_title">Contact Information</h2>
           <p>
             Email:
-            <span>xuannhi2k6@gmail.com</span>
+            <span
+              ><a href="mailto:xuannhi2k6@gmail.com"
+                >xuannhi2k6@gmail.com</a
+              ></span
+            >
           </p>
           <p>
-            Phone number:
-            <span>0425234002</span>
+            Phone:
+            <span><a href="tel:0425234002">0425234002</a></span>
           </p>
         </div>
       </div>
     </header>
 
     <!-- About me -->
-    <section class="aboutMe__section">
+    <section class="aboutMe__section" id="about">
       <!-- Animation Image -->
       <img src="./assets/rocket-icon.svg" alt="rocket-icon" />
       <img src="./assets/laptop-icon.svg" alt="laptop-icon" />
       <!-- Main content -->
-      <div class="aboutMe__container">
+      <div class="aboutMe__container reveal">
         <div class="aboutMe__content_container">
           <h1 class="section__title">About me:</h1>
           <p class="section__description">
@@ -73,19 +135,17 @@
               download
               >Download CV</a
             >
-            <a href="#ProjectContainer" class="outlineButton"
-              >See my projects</a
-            >
+            <a href="#projects" class="outlineButton">See my projects</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Skills -->
-    <section class="skills__section">
+    <section class="skills__section" id="skills">
       <div class="container skills__container">
         <!-- Header -->
-        <div class="section__header">
+        <div class="section__header reveal">
           <h1 class="section__title">Skills and Expertise</h1>
           <p>
             Frontend framework like React, have experience with back-end like
@@ -93,297 +153,308 @@
           </p>
         </div>
 
-        <!-- grid -->
+        <!-- Bento Grid -->
         <div class="skills__grid_container">
-          <!-- grid item 1 -->
-          <div class="skills__grid_item"></div>
+          <!-- Card 1: Education & Focus -->
+          <div
+            class="skills__grid_item skills__grid_item--education reveal reveal-delay-1"
+          >
+            <div class="skills__grid_item_header">
+              <div>
+                <img
+                  src="./assets/graduation-cap-icon.svg"
+                  alt="graduation cap icon"
+                />
+                <h2>Education & Focus</h2>
+              </div>
+              <p>Academic background and career goals.</p>
+            </div>
 
-          <!-- grid item 2 -->
-          <div class="skills__grid_item">
+            <div class="skills__education_content">
+              <div class="skills__edu_card">
+                <span class="skills__edu_title">Software Engineering</span>
+                <span class="skills__edu_subtitle"
+                  >3rd Year University Student</span
+                >
+                <div class="skills__edu_tags">
+                  <span class="skills__edu_tag">Data Structures</span>
+                  <span class="skills__edu_tag">Algorithms</span>
+                  <span class="skills__edu_tag">OOP</span>
+                </div>
+              </div>
+
+              <div class="skills__edu_card">
+                <span class="skills__edu_title">Target Roles</span>
+                <span class="skills__edu_subtitle"
+                  >Junior Developer / Software Intern</span
+                >
+                <div class="skills__edu_tags">
+                  <span class="skills__edu_tag">Full-Stack</span>
+                  <span class="skills__edu_tag">Web & AI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Tech Stack & Marquee -->
+          <div
+            class="skills__grid_item skills__grid_item--tech reveal reveal-delay-2"
+          >
             <div class="skills__grid_item_header">
               <div>
                 <img src="./assets/check-icon.svg" alt="check-icon" />
-                <h2>Tools and Technologies</h2>
+                <h2>Tools & Technologies</h2>
               </div>
               <p>
-                The tools and technologies I use to build clean, maintainable,
-                and user-friendly applications.
+                Core languages, frameworks, and tools I use to build scalable
+                web applications.
               </p>
             </div>
 
-            <!-- Skill logos -->
+            <!-- Skill marquee logos -->
             <div>
-              <!-- List 1 -->
+              <!-- Row 1 -->
               <div class="icons_list-wrapper">
                 <div class="icons-list">
                   <div class="icon-badges">
-                    <img src="./assets/icons/C.svg" alt="C icon" />
-                    <span>C</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="Github icon" />
-                    <span>GitHub</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="css icon" />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="HTML icon" />
-                    <span>HTML</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="node-js icon" />
-                    <span>node-js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
-                    />
-                    <span>postgresql</span>
+                    <img src="./assets/icons/react.svg" alt="React icon" />
+                    <span>React</span>
                   </div>
                   <div class="icon-badges">
-                    <img src="./assets/icons/django.svg" alt="django icon" />
+                    <img src="./assets/icons/nextjs.svg" alt="Next.js icon" />
+                    <span>Next.js</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/JS.svg" alt="JavaScript icon" />
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/node-js.svg" alt="Node.js icon" />
+                    <span>Node.js</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/django.svg" alt="Django icon" />
                     <span>Django</span>
                   </div>
+                  <div class="icon-badges">
+                    <img
+                      src="./assets/icons/postgresql.svg"
+                      alt="PostgreSQL icon"
+                    />
+                    <span>PostgreSQL</span>
+                  </div>
                 </div>
 
                 <div class="icons-list">
                   <div class="icon-badges">
-                    <img src="./assets/icons/C.svg" alt="C icon" />
-                    <span>C</span>
+                    <img src="./assets/icons/react.svg" alt="React icon" />
+                    <span>React</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="Github icon" />
-                    <span>GitHub</span>
+                    <img src="./assets/icons/nextjs.svg" alt="Next.js icon" />
+                    <span>Next.js</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="css icon" />
-                    <span>CSS</span>
+                    <img src="./assets/icons/JS.svg" alt="JavaScript icon" />
+                    <span>JavaScript</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
+                    <img src="./assets/icons/node-js.svg" alt="Node.js icon" />
+                    <span>Node.js</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="HTML icon" />
-                    <span>HTML</span>
+                    <img src="./assets/icons/django.svg" alt="Django icon" />
+                    <span>Django</span>
                   </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="node-js icon" />
-                    <span>node-js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
                   <div class="icon-badges">
                     <img
                       src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
+                      alt="PostgreSQL icon"
                     />
-                    <span>postgresql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/django.svg" alt="django icon" />
-                    <span>django</span>
+                    <span>PostgreSQL</span>
                   </div>
                 </div>
               </div>
-              <!-- List 2 -->
+
+              <!-- Row 2 -->
               <div class="icons_list-wrapper">
                 <div class="icons-list">
                   <div class="icon-badges">
+                    <img src="./assets/icons/github.svg" alt="GitHub icon" />
+                    <span>GitHub</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/html.svg" alt="HTML icon" />
+                    <span>HTML5</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/css.svg" alt="CSS icon" />
+                    <span>CSS3</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/java.svg" alt="Java icon" />
+                    <span>Java</span>
+                  </div>
+                  <div class="icon-badges">
                     <img src="./assets/icons/C.svg" alt="C icon" />
                     <span>C</span>
                   </div>
-
                   <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="Github icon" />
-                    <span>GitHub</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="css icon" />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="HTML icon" />
-                    <span>HTML</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="node-js icon" />
-                    <span>node-js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
-                    />
-                    <span>postgresql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/django.svg" alt="django icon" />
-                    <span>django</span>
+                    <img src="./assets/icons/node-js.svg" alt="Node.js icon" />
+                    <span>Node.js</span>
                   </div>
                 </div>
 
                 <div class="icons-list">
                   <div class="icon-badges">
+                    <img src="./assets/icons/github.svg" alt="GitHub icon" />
+                    <span>GitHub</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/html.svg" alt="HTML icon" />
+                    <span>HTML5</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/css.svg" alt="CSS icon" />
+                    <span>CSS3</span>
+                  </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/java.svg" alt="Java icon" />
+                    <span>Java</span>
+                  </div>
+                  <div class="icon-badges">
                     <img src="./assets/icons/C.svg" alt="C icon" />
                     <span>C</span>
                   </div>
+                  <div class="icon-badges">
+                    <img src="./assets/icons/node-js.svg" alt="Node.js icon" />
+                    <span>Node.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                  <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="Github icon" />
-                    <span>GitHub</span>
-                  </div>
+            <!-- Category Summary Badges -->
+            <div class="skills__tech_categories">
+              <div class="skills__tech_cat_item">
+                <span class="skills__tech_cat_label">Frontend:</span>
+                <span class="skills__tech_cat_value"
+                  >React · Next.js · HTML5/CSS3 · JS</span
+                >
+              </div>
+              <div class="skills__tech_cat_item">
+                <span class="skills__tech_cat_label">Backend:</span>
+                <span class="skills__tech_cat_value"
+                  >Node.js · Django · PostgreSQL</span
+                >
+              </div>
+              <div class="skills__tech_cat_item">
+                <span class="skills__tech_cat_label">Core:</span>
+                <span class="skills__tech_cat_value">Java · C · GitHub</span>
+              </div>
+            </div>
+          </div>
 
-                  <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="css icon" />
-                    <span>CSS</span>
-                  </div>
+          <!-- Card 3: Soft Skills -->
+          <div
+            class="skills__grid_item skills__grid_item--soft reveal reveal-delay-1"
+          >
+            <div class="skills__grid_item_header">
+              <div>
+                <img src="./assets/tree-icon.svg" alt="tree icon" />
+                <h2>Soft Skills & Collaboration</h2>
+              </div>
+              <p>
+                Key work ethics and communication skills I bring to engineering
+                teams.
+              </p>
+            </div>
 
-                  <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
-                  </div>
+            <div class="softSkills__modern_grid">
+              <div class="softSkills__card">
+                <div class="softSkills__icon-box">💬</div>
+                <div class="softSkills__info">
+                  <span class="softSkills__title">Clear Communication</span>
+                  <span class="softSkills__desc"
+                    >Clear technical explanations, active listening, and
+                    thorough documentation.</span
+                  >
+                </div>
+              </div>
 
-                  <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="HTML icon" />
-                    <span>HTML</span>
-                  </div>
+              <div class="softSkills__card">
+                <div class="softSkills__icon-box">⏱️</div>
+                <div class="softSkills__info">
+                  <span class="softSkills__title">Time Management</span>
+                  <span class="softSkills__desc"
+                    >Task prioritization, meeting deadlines, and structured
+                    sprint workflows.</span
+                  >
+                </div>
+              </div>
 
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="node-js icon" />
-                    <span>node-js</span>
-                  </div>
+              <div class="softSkills__card">
+                <div class="softSkills__icon-box">🤝</div>
+                <div class="softSkills__info">
+                  <span class="softSkills__title">Reliability & Ownership</span>
+                  <span class="softSkills__desc"
+                    >Proactive problem solving, dependable collaboration, and
+                    accountability.</span
+                  >
+                </div>
+              </div>
 
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
-                    />
-                    <span>postgresql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/django.svg" alt="django icon" />
-                    <span>django</span>
-                  </div>
+              <div class="softSkills__card">
+                <div class="softSkills__icon-box">🚀</div>
+                <div class="softSkills__info">
+                  <span class="softSkills__title">Fast Learner</span>
+                  <span class="softSkills__desc"
+                    >Quick to pick up new frameworks, architectures, and
+                    engineering best practices.</span
+                  >
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- grid item 3 -->
-          <div class="skills__grid_item">
+          <!-- Card 4: Engineering Mindset & Passion -->
+          <div
+            class="skills__grid_item skills__grid_item--mindset reveal reveal-delay-2"
+          >
             <div class="skills__grid_item_header">
               <div>
-                <img src="./assets/check-icon.svg" alt="check-icon" />
-                <h2>Soft Skills</h2>
+                <img src="./assets/laptop-icon.svg" alt="laptop icon" />
+                <h2>Mindset & Passion</h2>
               </div>
-              <p>What I bring to a team beyond code.</p>
+              <p>Crafting clean, maintainable code.</p>
             </div>
 
-            <div class="softSkills__container">
-              <div class="softSkills_badge">
-                <p>Professional Communication</p>
-              </div>
+            <div class="skills__mindset_body">
+              <p class="skills__mindset_text">
+                Dedicated to writing clean code, solving real-world challenges,
+                and continuously learning from peer reviews and feedback.
+              </p>
 
-              <div class="softSkills_badge">
-                <p>Time Management</p>
-              </div>
-
-              <div class="softSkills_badge">
-                <p>Reliability</p>
-              </div>
-
-              <div class="softSkills_badge">
-                <p>Eager to Learn</p>
-              </div>
-
-              <div class="softSkills__book_icons">
-                <img src="./assets/closed-book.svg" alt="close book icon" />
-                <img src="./assets/closed-book.svg" alt="close book icon" />
-                <img src="./assets/closed-book.svg" alt="close book icon" />
-                <img src="./assets/closed-book.svg" alt="close book icon" />
+              <div
+                class="skills__interactive_avatar_card"
+                title="Hover for cat mode!"
+              >
+                <div class="skills__avatar_badge">
+                  <span>🐾 Hover me</span>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- grid item 4 -->
-          <div class="skills__grid_item"></div>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
 
-    <section class="projects__section" id="ProjectContainer">
+    <section class="projects__section" id="projects">
       <div class="container projects__container">
         <!-- Header -->
-        <div class="section__header">
+        <div class="section__header reveal">
           <h1 class="section__title">Real Projects</h1>
           <p class="section__description">
             A collection of projects I've built to sharpen my technical skills
@@ -394,133 +465,313 @@
 
       <!-- Cards -->
       <div class="projects__cards_container">
-        <a
-          href="https://github.com/xuannhi-tran/rag-document-assistant"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <div class="projects_cards">
-            <div class="projects__cards_wrapper">
-              <img
-                src="./assets/project1.jpg"
-                alt="project1"
-                class="projects__cards_img"
-              />
+        <!-- Project 1 -->
+        <article class="projects_card reveal reveal-delay-1">
+          <div class="projects__cards_wrapper">
+            <img
+              src="./assets/project1.jpg"
+              alt="RAG Document Assistant preview"
+              class="projects__cards_img"
+            />
+          </div>
+          <div class="projects__card_body">
+            <div class="projects__cards_meta">
+              <span class="projects__card_category">AI & NLP</span>
+              <span class="badge">#01</span>
             </div>
-            <div class="projects__cards_title">
-              <h4>Project 1</h4>
-              <h3>RAG Assistant</h3>
+            <h3 class="projects__card_title">RAG Document Assistant</h3>
+            <p class="projects__card_description">
+              An intelligent Retrieval-Augmented Generation system allowing
+              users to upload documents, generate vector embeddings, and query
+              knowledge bases with precise contextual citations.
+            </p>
+            <div class="projects__tech_badges">
+              <span class="tech_badge">Python</span>
+              <span class="tech_badge">LangChain</span>
+              <span class="tech_badge">FastAPI</span>
+              <span class="tech_badge">OpenAI</span>
+              <span class="tech_badge">Vector DB</span>
+            </div>
+            <div class="projects__card_actions">
+              <a
+                href="https://rag-frontend-lilac.vercel.app/"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="project_btn project_btn--primary"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  ></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Live Demo</span>
+              </a>
+              <a
+                href="https://github.com/xuannhi-tran/rag-document-assistant"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="project_btn project_btn--outline"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                <span>Code</span>
+              </a>
             </div>
           </div>
-        </a>
+        </article>
 
-        <a
-          href="https://github.com/xuannhi-tran/expense-frontend"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <div class="projects_cards">
-            <div class="projects__cards_wrapper">
-              <img
-                src="./assets/project2.jpg"
-                alt="project2"
-                class="projects__cards_img"
-              />
+        <!-- Project 2 -->
+        <article class="projects_card reveal reveal-delay-2">
+          <div class="projects__cards_wrapper">
+            <img
+              src="./assets/project2.jpg"
+              alt="Expense Tracker preview"
+              class="projects__cards_img"
+            />
+          </div>
+          <div class="projects__card_body">
+            <div class="projects__cards_meta">
+              <span class="projects__card_category">Full Stack Web</span>
+              <span class="badge">#02</span>
             </div>
-            <div class="projects__cards_title">
-              <h4>Project 2</h4>
-              <h3>Expense Tracker</h3>
+            <h3 class="projects__card_title">Smart Expense Tracker</h3>
+            <p class="projects__card_description">
+              A personal finance tracking application featuring interactive
+              expense analytics, custom budget limits, category breakdowns, and
+              a smooth responsive UI.
+            </p>
+            <div class="projects__tech_badges">
+              <span class="tech_badge">React</span>
+              <span class="tech_badge">JavaScript</span>
+              <span class="tech_badge">Node.js</span>
+              <span class="tech_badge">CSS3</span>
+              <span class="tech_badge">REST API</span>
+            </div>
+            <div class="projects__card_actions">
+              <a
+                href="https://expense-frontend-tau-eight.vercel.app/"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="project_btn project_btn--primary"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  ></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Live Demo</span>
+              </a>
+              <a
+                href="https://github.com/xuannhi-tran/expense-api"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="project_btn project_btn--outline"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                <span>Code</span>
+              </a>
             </div>
           </div>
-        </a>
+        </article>
 
-        <a
-          href="https://github.com/xuannhi-tran/rag-document-assistant"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <div class="projects_cards">
-            <div class="projects__cards_wrapper">
-              <img
-                src="./assets/project3.jpg"
-                alt="project3"
-                class="projects__cards_img"
-              />
+        <!-- Project 3 -->
+        <article class="projects_card reveal reveal-delay-3">
+          <div class="projects__cards_wrapper">
+            <img
+              src="./assets/projects3.jpg"
+              alt="Developer Portfolio preview"
+              class="projects__cards_img"
+            />
+          </div>
+          <div class="projects__card_body">
+            <div class="projects__cards_meta">
+              <span class="projects__card_category">Frontend & UI</span>
+              <span class="badge">#03</span>
             </div>
-            <div class="projects__cards_title">
-              <h4>Project 3</h4>
-              <h3>Coming Soon</h3>
+            <h3 class="projects__card_title">Interactive Portfolio</h3>
+            <p class="projects__card_description">
+              A personal engineering portfolio featuring bento-grid skill
+              showcases, smooth interactive animations, clean typography
+              scaling, and full mobile responsiveness.
+            </p>
+            <div class="projects__tech_badges">
+              <span class="tech_badge">HTML5</span>
+              <span class="tech_badge">CSS3</span>
+              <span class="tech_badge">Flexbox & Grid</span>
+              <span class="tech_badge">Animations</span>
+            </div>
+            <div class="projects__card_actions">
+              <a href="#" class="project_btn project_btn--primary">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  ></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Live Demo</span>
+              </a>
+              <a
+                href="https://github.com/xuannhi-tran/portfolio"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="project_btn project_btn--outline"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+                <span>Code</span>
+              </a>
             </div>
           </div>
-        </a>
-
-        <a
-          href="https://github.com/xuannhi-tran/rag-document-assistant"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <div class="projects_cards">
-            <div class="projects__cards_wrapper">
-              <img
-                src="./assets/project4.jpg"
-                alt="project1"
-                class="projects__cards_img"
-              />
-            </div>
-            <div class="projects__cards_title">
-              <h4>Project 4</h4>
-              <h3>Coming Soon</h3>
-            </div>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/xuannhi-tran/rag-document-assistant"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <div class="projects_cards">
-            <div class="projects__cards_wrapper">
-              <img
-                src="./assets/project5.jpg"
-                alt="project1"
-                class="projects__cards_img"
-              />
-            </div>
-            <div class="projects__cards_title">
-              <h4>Project 5</h4>
-              <h3>Coming Soon</h3>
-            </div>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/xuannhi-tran/rag-document-assistant"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <div class="projects_cards">
-            <div class="projects__cards_wrapper">
-              <img
-                src="./assets/project6.jpg"
-                alt="project1"
-                class="projects__cards_img"
-              />
-            </div>
-            <div class="projects__cards_title">
-              <h4>Project 6</h4>
-              <h3>Coming Soon</h3>
-            </div>
-          </div>
-        </a>
+        </article>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <p>© Vo Xuan Nhi Tran Portfolio</p>
+    <!-- Footer / Contact -->
+    <footer id="contact">
+      <div class="container footer__container reveal">
+        <h2 class="footer__title">Let's Connect</h2>
+        <p class="footer__description">
+          I'm currently seeking Junior Software Developer and Internship
+          opportunities. Feel free to reach out or connect!
+        </p>
+
+        <div class="footer__contacts">
+          <a href="mailto:xuannhi2k6@gmail.com" class="footer__contact-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>xuannhi2k6@gmail.com</span>
+          </a>
+
+          <a href="tel:0425234002" class="footer__contact-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path>
+            </svg>
+            <span>0425 234 002</span>
+          </a>
+
+          <a
+            href="https://github.com/xuannhi-tran"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="footer__contact-item"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+
+        <p class="footer__copyright">
+          © 2026 Vo Xuan Nhi Tran · Built with HTML, CSS & JavaScript
+        </p>
       </div>
     </footer>
+
+    <!-- Back to Top Floating Button -->
+    <a
+      href="#home"
+      class="back-to-top"
+      id="backToTopBtn"
+      aria-label="Back to Top"
+      title="Back to Top"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </a>
+
+    <script>
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTopBtn");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("visible");
+        } else {
+          backToTopBtn.classList.remove("visible");
+        }
+      });
+
+      // Scroll Reveal Animations
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      revealElements.forEach((el) => revealObserver.observe(el));
+    </script>
   </body>
 </html>

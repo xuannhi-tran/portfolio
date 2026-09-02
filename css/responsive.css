@@ -15,16 +15,6 @@ Desktop
   .container {
     max-width: 1028px;
   }
-
-  /* *SKILLS* */
-  .softSkills_badge {
-    position: static !important;
-    transfrom: none !important;
-  }
-
-  .softSkills__book_icons {
-    display: none;
-  }
 }
 
 /* *=======================
@@ -117,7 +107,7 @@ Small Tablet - landscape mode
     max-width: 640px;
   }
 
-  /** ABOUT ME     **/
+  /** ABOUT ME **/
   .aboutMe__section {
     margin: 80px auto;
 
@@ -125,22 +115,4 @@ Small Tablet - landscape mode
       display: none;
     }
   }
-
-  /** SKILLS **/
-  .skills__grid_container {
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
-    grid-template-rows: repeat(2, minmax(280px, auto));
-    grid-auto-rows: minmax(280px, auto);
-
-    & .skills__grid_item {
-      padding: 1rem 1rem;
-      grid-column: span 1 !important;
-      grid-row: span 1 !important;
-    }
-  }
-
-  /** Footer **/
-  /* footer {
-    padding: 0;
-  } */
 }

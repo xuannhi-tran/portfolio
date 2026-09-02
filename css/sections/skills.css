@@ -1,3 +1,7 @@
+.skills__section {
+  position: relative;
+}
+
 .skills__container {
   display: flex;
   flex-direction: column;
@@ -6,215 +10,415 @@
 
 .skills__grid_container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  grid-template-rows: repeat(2, minmax(320px, auto));
-  gap: 12px;
-}
-
-.skills__grid_item_header {
-  & div {
-    display: flex;
-    gap: 12px;
-  }
-
-  & h2 {
-    font-size: var(--h2-font-size);
-    line-height: var(--h2-line-height);
-    font-weight: 600;
-    text-transform: capitalize;
-  }
-
-  & p {
-    margin-top: 12px;
-    color: var(--n-500);
-    max-width: 60ch;
-  }
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .skills__grid_item {
+  position: relative;
   overflow: hidden;
-  border: 2px solid var(--p-100);
+  border: 1px solid var(--p-100);
   border-radius: 24px;
   background-color: var(--p-20);
-  padding: 2rem 2rem;
-  box-shadow: 0px 2px 4px hsla(233, 45%, 20%, 0.1);
+  padding: 1.85rem;
+  box-shadow: 0 4px 20px -4px hsla(var(--p-950-code), 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
 
-  &:nth-child(1) {
-    border: none;
-    /* background-image: url("../../assets/cat1.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background: url("../../assets/cat1.jpeg") center/ cover no-repeat;
+.skills__grid_item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -6px hsla(var(--p-900-code), 0.14);
+  border-color: var(--p-300);
+}
+
+.skills__grid_item_header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skills__grid_item_header > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skills__grid_item_header h2 {
+  font-size: 1.35rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  color: var(--p-950);
+}
+
+.skills__grid_item_header p {
+  color: var(--n-500);
+  font-size: 0.925rem;
+  line-height: 1.4;
+}
+
+.skills__grid_item_header img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================
+   Card 1: Education & Focus (1 column)
+   ========================================== */
+.skills__grid_item--education {
+  grid-column: span 1;
+  background: linear-gradient(135deg, #ffffff 0%, var(--p-20) 100%);
+}
+
+.skills__education_content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills__edu_card {
+  padding: 14px;
+  background-color: #ffffff;
+  border: 1px solid var(--p-100);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skills__edu_card:hover {
+  transform: translateX(4px);
+  border-color: var(--p-300);
+}
+
+.skills__edu_title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--p-950);
+}
+
+.skills__edu_subtitle {
+  font-size: 0.825rem;
+  color: var(--n-600);
+}
+
+.skills__edu_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.skills__edu_tag {
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: var(--p-50);
+  color: var(--p-700);
+  border: 1px solid var(--p-100);
+}
+
+/* ==========================================
+   Card 2: Tech Stack & Marquee (2 columns)
+   ========================================== */
+.skills__grid_item--tech {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skills__tech_marquee_container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.icons_list-wrapper {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  padding: 4px 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.icons_list-wrapper:hover .icons-list {
+  animation-play-state: paused;
+}
+
+.icons_list-wrapper:nth-child(1) > .icons-list {
+  animation: move-left 28s linear infinite;
+}
+
+.icons_list-wrapper:nth-child(2) > .icons-list {
+  animation: move-right 28s linear infinite;
+}
+
+.icons-list {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.icon-badges {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 8px 18px;
+  background-color: #ffffff;
+  border: 1px solid var(--p-100);
+  box-shadow: 0 2px 5px hsla(var(--p-950-code), 0.04);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--p-950);
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.icon-badges:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: var(--p-400);
+  box-shadow: 0 6px 14px hsla(var(--p-900-code), 0.12);
+}
+
+.icon-badges img {
+  height: 22px;
+  width: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.icon-badges span {
+  font-weight: 600;
+  color: var(--p-950);
+}
+
+/* Highlight key badges subtly */
+.icon-badges--gradient {
+  background: var(--main-gradient-color);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.icon-badges--gradient span {
+  color: #ffffff;
+}
+
+.skills__tech_categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--p-100);
+}
+
+.skills__tech_cat_item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid var(--p-100);
+  font-size: 0.775rem;
+}
+
+.skills__tech_cat_label {
+  font-weight: 700;
+  color: var(--p-700);
+}
+
+.skills__tech_cat_value {
+  color: var(--n-600);
+}
+
+/* ==========================================
+   Card 3: Soft Skills Grid (2 columns)
+   ========================================== */
+.skills__grid_item--soft {
+  grid-column: span 2;
+  gap: 16px;
+}
+
+.softSkills__modern_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.softSkills__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: white;
+  border: 1px solid var(--p-100);
+  border-radius: 14px;
+  box-shadow: 0 2px 4px hsla(var(--p-950-code), 0.03);
+  transition: all 0.25s ease;
+}
+
+.softSkills__card:hover {
+  border-color: var(--p-300);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -2px hsla(var(--p-900-code), 0.1);
+}
+
+.softSkills__icon-box {
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: var(--p-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.softSkills__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.softSkills__title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--p-950);
+}
+
+.softSkills__desc {
+  font-size: 0.8rem;
+  color: var(--n-600);
+  line-height: 1.35;
+}
+
+/* ==========================================
+   Card 4: Mindset & Passion (1 column)
+   ========================================== */
+.skills__grid_item--mindset {
+  grid-column: span 1;
+  background: linear-gradient(135deg, #ffffff 0%, var(--p-50) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skills__mindset_body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills__mindset_text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--n-600);
+}
+
+.skills__interactive_avatar_card {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--p-100);
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../assets/cat3.jpeg");
+  transition: background-image 0.4s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.skills__interactive_avatar_card:hover {
+  background-image: url("../../assets/cat2.jpeg");
+  transform: scale(1.02);
+}
+
+.skills__avatar_badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: hsla(0, 0%, 0%, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.725rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================
+   Responsive Breakpoints for Skills Bento
+   ========================================== */
+@media (max-width: 1024px) {
+  .skills__grid_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  &:nth-child(2) {
+  .skills__grid_item--education {
+    grid-column: span 1;
+  }
+
+  .skills__grid_item--mindset {
+    grid-column: span 1;
+  }
+
+  .skills__grid_item--tech {
     grid-column: span 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    & .icons_list-wrapper {
-      overflow: hidden;
-      margin-top: 8px;
-      display: flex;
-      gap: 12px;
-
-      &:nth-child(1) > div.icons-list {
-        animation: move-left 30s linear infinite;
-      }
-
-      &:nth-child(2) > .icons-list {
-        animation: move-right 60s linear infinite;
-      }
-    }
-
-    & .icon-badges {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.14em;
-      border-radius: 12px;
-      padding: 0.6em 0;
-      width: 12em;
-      font-weight: 700;
-      font-size: var(--caption-font-size);
-      text-transform: uppercase;
-
-      & img {
-        height: 2em;
-      }
-    }
-
-    & .icons-list {
-      display: flex;
-      min-width: 100%;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    & .icon-badges:nth-child(even) {
-      background: var(--main-gradient-color);
-      color: white;
-    }
-
-    & .icon-badges:nth-child(odd) {
-      background: white;
-      border: 1px solid var(--p-100);
-
-      & span {
-        background: var(--main-gradient-color);
-        color: transparent;
-        background-clip: text;
-      }
-    }
   }
 
-  &:nth-child(3) {
+  .skills__grid_item--soft {
     grid-column: span 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  }
+}
 
-    & .softSkills__container {
-      position: relative;
-      flex: 1;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-content: center;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    & .softSkills_badge {
-      height: 36px;
-      width: 244px;
-      border: 1px solid var(--p-100);
-      border-radius: 24px;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: var(--caption-font-size);
-      font-weight: 600;
-      text-transform: capitalize;
-      position: absolute;
-
-      & p {
-        background: var(--main-gradient-color);
-        color: transparent;
-        background-clip: text;
-      }
-
-      &:nth-child(1) {
-        top: 20%;
-        left: 10%;
-        transform: rotate(-2deg);
-      }
-
-      &:nth-child(2) {
-        bottom: 10%;
-        left: 20%;
-        transform: rotate(2deg);
-      }
-
-      &:nth-child(3) {
-        top: 25%;
-        right: 20%;
-        transform: rotate(-2deg);
-      }
-
-      &:nth-child(4) {
-        bottom: 10%;
-        right: 5%;
-        transform: rotate(2deg);
-      }
-    }
-
-    & .softSkills__book_icons {
-      position: relative;
-      height: 100%;
-      width: 100%;
-
-      & img {
-        height: 40px;
-        width: 40px;
-        position: absolute;
-
-        &:nth-child(1) {
-          top: 20px;
-          left: 20px;
-          transform: scaleX(-1) translateY(5px);
-        }
-
-        &:nth-child(2) {
-          top: 40%;
-          left: 45%;
-          transform: rotate(120deg);
-        }
-
-        &:nth-child(3) {
-          top: 10%;
-          right: 20%;
-        }
-
-        &:nth-child(4) {
-          bottom: 20%;
-          right: 5%;
-          transform: scaleX(-1);
-          transform: rotate(-40deg);
-        }
-      }
-    }
+@media (max-width: 768px) {
+  .skills__grid_container {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  &:nth-child(4) {
-    background: url("../../assets/cat3.jpeg") center / cover no-repeat;
-    border: none;
+  .skills__grid_item {
+    grid-column: span 1 !important;
+    padding: 1.5rem;
+  }
 
-    &:hover {
-      background-image: url("../../assets/cat2.jpeg");
-    }
+  .softSkills__modern_grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
