@@ -3,7 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Vo Xuan Nhi Tran | Software Engineer & Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Vo Xuan Nhi Tran - 3rd-year Software Engineering student specializing in full-stack web development, AI & RAG applications, React, Node.js, and Python."
+    />
+    <meta name="author" content="Vo Xuan Nhi Tran" />
+    <meta
+      name="keywords"
+      content="Vo Xuan Nhi Tran, Software Engineer, Full Stack Developer, React, Django, FastAPI, Python, Portfolio, Web Developer"
+    />
+
+    <!-- Open Graph / Social Sharing Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Vo Xuan Nhi Tran | Software Engineer & Full-Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Explore my software engineering projects, full-stack web apps, AI & RAG document assistants, and tech stack."
+    />
+    <meta property="og:image" content="./assets/avatar.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Vo Xuan Nhi Tran | Software Engineer & Full-Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore my software engineering projects, full-stack web apps, AI & RAG document assistants, and tech stack."
+    />
+    <meta name="twitter:image" content="./assets/avatar.jpg" />
+
     <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" href="./assets/rocket-icon.ico" />
     <link rel="stylesheet" href="css/responsive.css" />
@@ -15,15 +49,18 @@
     />
   </head>
   <body>
+    <!-- Full-Page Deep Space Galaxy Canvas -->
+    <canvas id="galaxy-bg"></canvas>
+
+    <!-- Interactive Mouse-Trail Particles Canvas -->
+    <canvas id="cursor-particles"></canvas>
+
     <!-- Sticky Blurred Navbar -->
     <nav class="navbar" id="navbar">
       <div class="container navbar__container">
         <a href="#home" class="navbar__brand">
           <div class="navbar__brand-avatar"></div>
           <span class="navbar__brand-name">Vo Xuan Nhi Tran</span>
-          <span class="navbar__brand-status">
-            <span class="navbar__brand-dot"></span> Available
-          </span>
         </a>
 
         <ul class="navbar__nav">
@@ -48,6 +85,42 @@
               />
             </svg>
           </a>
+          <a
+            href="https://www.linkedin.com/in/xuannhi-tran/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="navbar__social-link"
+            aria-label="LinkedIn Profile"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"
+              />
+            </svg>
+          </a>
+          <button
+            class="navbar__theme-toggle"
+            id="themeToggleBtn"
+            aria-label="Toggle dark/light mode"
+            title="Toggle theme"
+            type="button"
+          >
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
           <a
             href="./assets/CV_Resume.pdf"
             target="_blank"
@@ -84,7 +157,7 @@
             <h2 class="header_title">Vo Xuan Nhi Tran</h2>
             <div class="header__badge_container">
               <div class="badge">Fullstack Developer</div>
-              <div class="badge">Web Developer</div>
+              <div class="badge">Web & AI Applications</div>
             </div>
             <p>
               Wish to apply for
@@ -94,18 +167,20 @@
         </div>
         <!-- Right column -->
         <div class="header__column--right">
-          <h2 class="header_title">Contact Information</h2>
-          <p>
-            Email:
-            <span
-              ><a href="mailto:xuannhi2k6@gmail.com"
-                >xuannhi2k6@gmail.com</a
-              ></span
+          <p class="header__location">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="header__location-icon"
             >
-          </p>
-          <p>
-            Phone:
-            <span><a href="tel:0425234002">0425234002</a></span>
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Sydney, Australia · Open to internship opportunities
           </p>
         </div>
       </div>
@@ -120,11 +195,8 @@
       <div class="aboutMe__container reveal">
         <div class="aboutMe__content_container">
           <h1 class="section__title">About me:</h1>
-          <p class="section__description">
-            <!-- Introduction about me -->
-            Hello! I'm a third-year Software Engineering student. I have a real
-            passion for programming, and I especially enjoy building modern,
-            practical web and mobile applications.
+          <p class="aboutMe__description">
+            I’m a third-year Software Engineering student at the University of Sydney, building web and AI-driven applications and seeking Software Engineering internship opportunities.
           </p>
           <div class="CTA">
             <a
@@ -626,7 +698,7 @@
               <span class="tech_badge">Animations</span>
             </div>
             <div class="projects__card_actions">
-              <a href="#" class="project_btn project_btn--primary">
+              <a href="#home" class="project_btn project_btn--primary">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -689,22 +761,6 @@
             <span>xuannhi2k6@gmail.com</span>
           </a>
 
-          <a href="tel:0425234002" class="footer__contact-item">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-              ></path>
-            </svg>
-            <span>0425 234 002</span>
-          </a>
-
           <a
             href="https://github.com/xuannhi-tran"
             target="_blank"
@@ -717,6 +773,20 @@
               />
             </svg>
             <span>GitHub</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/xuannhi-tran/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="footer__contact-item"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63z"
+              />
+            </svg>
+            <span>LinkedIn</span>
           </a>
         </div>
 
@@ -746,8 +816,23 @@
       </svg>
     </a>
 
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span id="toastMessage">Email copied to clipboard!</span>
+    </div>
+
     <script>
-      // Back to Top Button
+      // Back to Top Button Visibility
       const backToTopBtn = document.getElementById("backToTopBtn");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
@@ -772,6 +857,604 @@
       );
 
       revealElements.forEach((el) => revealObserver.observe(el));
+
+      // Active Navbar Highlighting (ScrollSpy)
+      const sections = document.querySelectorAll(
+        "header[id], section[id], footer[id]"
+      );
+      const navLinks = document.querySelectorAll(".navbar__link");
+
+      function updateActiveNav() {
+        const scrollPosition = window.scrollY + 140;
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute("id");
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${sectionId}`) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveNav);
+      updateActiveNav();
+
+      // One-Click Copy Email to Clipboard with Toast
+      const toast = document.getElementById("toast");
+      let toastTimeout;
+
+      function showToast(message) {
+        const toastMsg = document.getElementById("toastMessage");
+        if (toastMsg) toastMsg.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2000);
+      }
+
+      // ==========================================
+      // Dark / Light Theme Toggle & Synchronization
+      // ==========================================
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        document.body.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        window.dispatchEvent(new CustomEvent("themechange", { detail: { theme } }));
+      }
+
+      const savedTheme = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initialTheme = savedTheme ? savedTheme : (systemPrefersDark ? "dark" : "light");
+      applyTheme(initialTheme);
+
+      const themeToggleBtn = document.getElementById("themeToggleBtn");
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+          const targetTheme = currentTheme === "dark" ? "light" : "dark";
+          applyTheme(targetTheme);
+          showToast(targetTheme === "dark" ? "Dark Mode enabled 🌙" : "Light Mode enabled ☀️");
+        });
+      }
+
+      // ==========================================
+      // Subtle Constellation Mouse-Trail Particle Effect
+      // ==========================================
+      (function initCursorParticles() {
+        const canvas = document.getElementById("cursor-particles");
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+        let width = 0;
+        let height = 0;
+
+        function resizeCanvas() {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas, { passive: true });
+
+        const particles = [];
+        const MAX_PARTICLES = 25;
+        const CONNECT_DISTANCE = 75;
+        const MIN_MOVE_DISTANCE = 15; // Only spawn after 15px movement
+
+        const darkColors = [
+          { r: 255, g: 255, b: 255 },
+          { r: 96, g: 165, b: 250 },
+          { r: 129, g: 140, b: 248 },
+          { r: 167, g: 139, b: 250 },
+          { r: 56, g: 189, b: 248 }
+        ];
+
+        const lightColors = [
+          { r: 79, g: 70, b: 229 },
+          { r: 99, g: 102, b: 241 },
+          { r: 6, g: 182, b: 212 },
+          { r: 14, g: 165, b: 233 },
+          { r: 59, g: 130, b: 246 }
+        ];
+
+        let lastX = null;
+        let lastY = null;
+        let lastSpawnTime = 0;
+        let animFrameId = null;
+
+        class Particle {
+          constructor(x, y) {
+            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+            const palette = isDark ? darkColors : lightColors;
+
+            this.x = x;
+            this.y = y;
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 0.8 + 0.2;
+            this.vx = Math.cos(angle) * speed;
+            this.vy = Math.sin(angle) * speed - 0.2;
+            this.size = Math.random() * 1.4 + 1.2;
+            this.color = palette[Math.floor(Math.random() * palette.length)];
+            this.alpha = Math.random() * 0.2 + 0.45;
+            this.maxAlpha = this.alpha;
+            this.decay = Math.random() * 0.016 + 0.012;
+            this.life = 1;
+            this.isDark = isDark;
+          }
+
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.vx *= 0.98;
+            this.vy *= 0.98;
+            this.life -= this.decay;
+            this.alpha = this.maxAlpha * Math.max(0, this.life);
+          }
+
+          draw(ctx) {
+            if (this.alpha <= 0.01) return;
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.alpha})`;
+            if (this.isDark) {
+              ctx.shadowBlur = 5;
+              ctx.shadowColor = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.alpha * 0.6})`;
+            }
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        function onPointerMove(e) {
+          const clientX = e.clientX;
+          const clientY = e.clientY;
+          const now = performance.now();
+
+          if (lastX === null || lastY === null) {
+            lastX = clientX;
+            lastY = clientY;
+            lastSpawnTime = now;
+            return;
+          }
+
+          const dist = Math.hypot(clientX - lastX, clientY - lastY);
+
+          if (dist >= MIN_MOVE_DISTANCE && now - lastSpawnTime > 25) {
+            if (particles.length < MAX_PARTICLES) {
+              particles.push(new Particle(clientX, clientY));
+            }
+            lastX = clientX;
+            lastY = clientY;
+            lastSpawnTime = now;
+          }
+
+          if (!animFrameId) {
+            loop();
+          }
+        }
+
+        window.addEventListener("mousemove", onPointerMove, { passive: true });
+        window.addEventListener("pointermove", onPointerMove, { passive: true });
+
+        function loop() {
+          ctx.clearRect(0, 0, width, height);
+
+          const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+
+          // Update & render particles
+          for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.update();
+
+            if (p.life <= 0) {
+              particles.splice(i, 1);
+            } else {
+              p.draw(ctx);
+            }
+          }
+
+          // Subtle constellation connecting streaks
+          const len = particles.length;
+          for (let i = 0; i < len; i++) {
+            for (let j = i + 1; j < len; j++) {
+              const p1 = particles[i];
+              const p2 = particles[j];
+              const dx = p1.x - p2.x;
+              const dy = p1.y - p2.y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+
+              if (dist < CONNECT_DISTANCE) {
+                const lineAlpha =
+                  (1 - dist / CONNECT_DISTANCE) *
+                  Math.min(p1.alpha, p2.alpha) *
+                  0.22;
+                if (lineAlpha > 0.01) {
+                  ctx.beginPath();
+                  ctx.moveTo(p1.x, p1.y);
+                  ctx.lineTo(p2.x, p2.y);
+                  ctx.strokeStyle = isDark
+                    ? `rgba(165, 180, 252, ${lineAlpha})`
+                    : `rgba(99, 102, 241, ${lineAlpha * 0.7})`;
+                  ctx.lineWidth = 0.8;
+                  ctx.stroke();
+                }
+              }
+            }
+          }
+
+          if (particles.length > 0) {
+            animFrameId = requestAnimationFrame(loop);
+          } else {
+            animFrameId = null;
+            ctx.clearRect(0, 0, width, height);
+          }
+        }
+      })();
+
+      // ==========================================
+      // Atmospheric Aurora & Nebula Background Engine
+      // ==========================================
+      (function initAdaptiveConstellations() {
+        const canvas = document.getElementById("galaxy-bg");
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+        let width = 0;
+        let height = 0;
+        let scrollY = window.scrollY || 0;
+
+        function resizeCanvas() {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+          generateCosmicScene();
+        }
+
+        window.addEventListener("resize", resizeCanvas, { passive: true });
+        window.addEventListener(
+          "scroll",
+          () => {
+            scrollY = window.scrollY || 0;
+          },
+          { passive: true }
+        );
+
+        let nodes = [];
+        let connections = [];
+        let orbits = [];
+
+        function generateCosmicScene() {
+          nodes = [];
+          connections = [];
+          orbits = [];
+
+          // 1. Faint, Oversized Orbital Paths
+          orbits = [
+            {
+              cx: width * 0.85,
+              cy: height * 0.18,
+              rx: width * 0.65,
+              ry: height * 0.45,
+              rotation: Math.PI / 6,
+              startAngle: 0,
+              endAngle: Math.PI * 2,
+              dash: [6, 16],
+              beaconSpeed: 0.00014
+            },
+            {
+              cx: width * 0.15,
+              cy: height * 0.82,
+              rx: width * 0.75,
+              ry: height * 0.5,
+              rotation: -Math.PI / 4.5,
+              startAngle: 0,
+              endAngle: Math.PI * 2,
+              dash: [],
+              beaconSpeed: 0.0001
+            }
+          ];
+
+          // 2. Sparse Multi-Tier Stars (Minimal count: 35–60 nodes to avoid dot clutter)
+          const nodeCount = Math.floor(Math.min(Math.max((width * height) / 18000, 35), 60));
+
+          for (let i = 0; i < nodeCount; i++) {
+            const tierRand = Math.random();
+            let tier = "bg";
+            let size = Math.random() * 0.6 + 0.6; // 0.6 - 1.2px
+            let baseAlpha = Math.random() * 0.2 + 0.2;
+            let depth = 0.25;
+
+            if (tierRand > 0.7 && tierRand < 0.92) {
+              tier = "mid";
+              size = Math.random() * 0.6 + 1.2; // 1.2 - 1.8px
+              baseAlpha = Math.random() * 0.2 + 0.4;
+              depth = 0.45;
+            } else if (tierRand >= 0.92) {
+              tier = "fg";
+              size = Math.random() * 0.8 + 1.8; // 1.8 - 2.6px
+              baseAlpha = Math.random() * 0.25 + 0.65;
+              depth = 0.65;
+            }
+
+            nodes.push({
+              x: Math.random() * width,
+              y: Math.random() * height,
+              size,
+              baseAlpha,
+              tier,
+              twinkleSpeed: Math.random() * 0.0018 + 0.0008,
+              phase: Math.random() * Math.PI * 2,
+              depth,
+              isAnchor: tier === "fg"
+            });
+          }
+
+          // 3. Faint Constellation Links
+          const linkableNodes = nodes.filter((n) => n.tier !== "bg");
+          for (let i = 0; i < linkableNodes.length; i++) {
+            for (let j = i + 1; j < linkableNodes.length; j++) {
+              const dx = linkableNodes[i].x - linkableNodes[j].x;
+              const dy = linkableNodes[i].y - linkableNodes[j].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+
+              if (dist > 60 && dist < 140 && Math.random() < 0.12) {
+                connections.push({ n1: linkableNodes[i], n2: linkableNodes[j], dist });
+              }
+            }
+          }
+        }
+
+        resizeCanvas();
+
+        const prefersReducedMotion =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function render(time) {
+          ctx.clearRect(0, 0, width, height);
+
+          const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+
+          // Base background fill
+          ctx.fillStyle = isDark ? "#060814" : "#F7F9FF";
+          ctx.fillRect(0, 0, width, height);
+
+          // Animated slow drift offsets (20-30s period)
+          const drift1 = prefersReducedMotion ? 0 : Math.sin(time * 0.00025) * (width * 0.04);
+          const drift2 = prefersReducedMotion ? 0 : Math.cos(time * 0.0002) * (height * 0.03);
+          const pulse = prefersReducedMotion ? 0 : Math.sin(time * 0.00035) * 0.04;
+
+          const scrollOffset = scrollY * 0.025;
+
+          // ==========================================
+          // 1. DIAGONAL COSMIC AURORA / NEBULA LIGHT BAND
+          // ==========================================
+          // Flows from bottom-left (behind rocket) -> through center -> top-right (behind laptop/location)
+          const startX = width * -0.15 + drift1;
+          const startY = height * 1.1 - scrollOffset + drift2;
+          const endX = width * 1.15 - drift1;
+          const endY = height * -0.1 - scrollOffset - drift2;
+
+          const diagGradient = ctx.createLinearGradient(startX, startY, endX, endY);
+
+          if (isDark) {
+            diagGradient.addColorStop(0, `rgba(49, 46, 129, ${0.36 + pulse})`); // Deep indigo
+            diagGradient.addColorStop(0.3, `rgba(139, 92, 246, ${0.28 + pulse * 0.8})`); // Luminous violet
+            diagGradient.addColorStop(0.55, `rgba(79, 70, 229, ${0.22 + pulse * 0.5})`); // Soft indigo
+            diagGradient.addColorStop(0.78, `rgba(14, 165, 233, ${0.26 + pulse * 0.8})`); // Electric blue
+            diagGradient.addColorStop(1, `rgba(6, 182, 212, ${0.20 + pulse * 0.6})`); // Subtle cyan
+          } else {
+            diagGradient.addColorStop(0, `rgba(216, 180, 254, ${0.46 + pulse * 0.5})`); // Lavender
+            diagGradient.addColorStop(0.35, `rgba(199, 210, 254, ${0.42 + pulse * 0.4})`); // Soft indigo
+            diagGradient.addColorStop(0.65, `rgba(186, 230, 253, ${0.48 + pulse * 0.5})`); // Sky blue
+            diagGradient.addColorStop(1, `rgba(207, 250, 254, ${0.38 + pulse * 0.4})`); // Pale cyan
+          }
+
+          ctx.fillStyle = diagGradient;
+          ctx.fillRect(0, 0, width, height);
+
+          // ==========================================
+          // 2. LUMINOUS NEBULA CLUSTERS (ILLUSTRATION ANCHORS)
+          // ==========================================
+          const minDim = Math.min(width, height);
+
+          // Cluster A: Behind Rocket (Bottom-Left Area)
+          const rocketX = width * 0.14 + drift1 * 0.6;
+          const rocketY = (height * 0.38 - scrollOffset + height * 10) % height;
+          const rGrad1 = ctx.createRadialGradient(
+            rocketX,
+            rocketY,
+            0,
+            rocketX,
+            rocketY,
+            minDim * 0.65
+          );
+
+          if (isDark) {
+            rGrad1.addColorStop(0, `rgba(99, 102, 241, ${0.36 + pulse})`);
+            rGrad1.addColorStop(0.4, `rgba(14, 165, 233, ${0.20 + pulse * 0.6})`);
+            rGrad1.addColorStop(0.75, "rgba(49, 46, 129, 0.08)");
+            rGrad1.addColorStop(1, "rgba(6, 8, 20, 0)");
+          } else {
+            rGrad1.addColorStop(0, `rgba(199, 210, 254, ${0.58 + pulse * 0.5})`);
+            rGrad1.addColorStop(0.45, `rgba(224, 242, 254, ${0.40 + pulse * 0.4})`);
+            rGrad1.addColorStop(1, "rgba(247, 249, 255, 0)");
+          }
+
+          ctx.fillStyle = rGrad1;
+          ctx.fillRect(0, 0, width, height);
+
+          // Cluster B: Behind Laptop & Location (Top-Right Area)
+          const laptopX = width * 0.86 - drift1 * 0.6;
+          const laptopY = (height * 0.22 - scrollOffset + height * 10) % height;
+          const rGrad2 = ctx.createRadialGradient(
+            laptopX,
+            laptopY,
+            0,
+            laptopX,
+            laptopY,
+            minDim * 0.68
+          );
+
+          if (isDark) {
+            rGrad2.addColorStop(0, `rgba(168, 85, 247, ${0.32 + pulse})`);
+            rGrad2.addColorStop(0.4, `rgba(79, 70, 229, ${0.20 + pulse * 0.6})`);
+            rGrad2.addColorStop(0.75, "rgba(6, 182, 212, 0.08)");
+            rGrad2.addColorStop(1, "rgba(6, 8, 20, 0)");
+          } else {
+            rGrad2.addColorStop(0, `rgba(243, 232, 255, ${0.54 + pulse * 0.5})`);
+            rGrad2.addColorStop(0.45, `rgba(219, 234, 254, ${0.42 + pulse * 0.4})`);
+            rGrad2.addColorStop(1, "rgba(247, 249, 255, 0)");
+          }
+
+          ctx.fillStyle = rGrad2;
+          ctx.fillRect(0, 0, width, height);
+
+          // Cluster C: Soft Secondary Glow (Skills / Lower Page)
+          const skillsX = width * 0.25 + drift2 * 0.5;
+          const skillsY = (height * 0.82 - scrollOffset + height * 10) % height;
+          const rGrad3 = ctx.createRadialGradient(
+            skillsX,
+            skillsY,
+            0,
+            skillsX,
+            skillsY,
+            minDim * 0.55
+          );
+
+          if (isDark) {
+            rGrad3.addColorStop(0, `rgba(14, 165, 233, ${0.18 + pulse * 0.5})`);
+            rGrad3.addColorStop(0.5, "rgba(88, 28, 135, 0.08)");
+            rGrad3.addColorStop(1, "rgba(6, 8, 20, 0)");
+          } else {
+            rGrad3.addColorStop(0, `rgba(207, 250, 254, ${0.40 + pulse * 0.4})`);
+            rGrad3.addColorStop(0.5, "rgba(238, 242, 255, 0.25)");
+            rGrad3.addColorStop(1, "rgba(247, 249, 255, 0)");
+          }
+
+          ctx.fillStyle = rGrad3;
+          ctx.fillRect(0, 0, width, height);
+
+          // ==========================================
+          // 3. OVERSIZED CURVED ORBITAL TRACKS
+          // ==========================================
+          orbits.forEach((orbit) => {
+            const cy = (orbit.cy - scrollOffset * 1.2 + height * 10) % height;
+
+            ctx.save();
+            ctx.beginPath();
+            if (orbit.dash.length > 0) {
+              ctx.setLineDash(orbit.dash);
+            }
+            ctx.ellipse(
+              orbit.cx,
+              cy,
+              orbit.rx,
+              orbit.ry,
+              orbit.rotation,
+              orbit.startAngle,
+              orbit.endAngle
+            );
+
+            ctx.strokeStyle = isDark
+              ? "rgba(165, 180, 252, 0.08)"
+              : "rgba(99, 102, 241, 0.08)";
+            ctx.lineWidth = 0.85;
+            ctx.stroke();
+
+            // Subtle orbiting beacon
+            const beaconAngle = (time * orbit.beaconSpeed) % (Math.PI * 2);
+            const bx =
+              orbit.cx +
+              Math.cos(beaconAngle) * orbit.rx * Math.cos(orbit.rotation) -
+              Math.sin(beaconAngle) * orbit.ry * Math.sin(orbit.rotation);
+            const by =
+              cy +
+              Math.cos(beaconAngle) * orbit.rx * Math.sin(orbit.rotation) +
+              Math.sin(beaconAngle) * orbit.ry * Math.cos(orbit.rotation);
+
+            ctx.beginPath();
+            ctx.arc(bx, by, 1.5, 0, Math.PI * 2);
+            ctx.fillStyle = isDark
+              ? "rgba(129, 140, 248, 0.45)"
+              : "rgba(79, 70, 229, 0.4)";
+            ctx.fill();
+
+            ctx.restore();
+          });
+
+          // ==========================================
+          // 4. CONSTELLATION LINKING LINES
+          // ==========================================
+          connections.forEach((c) => {
+            const p1Y = (c.n1.y - scrollOffset * c.n1.depth * 1.4 + height * 10) % height;
+            const p2Y = (c.n2.y - scrollOffset * c.n2.depth * 1.4 + height * 10) % height;
+
+            ctx.beginPath();
+            ctx.moveTo(c.n1.x, p1Y);
+            ctx.lineTo(c.n2.x, p2Y);
+            ctx.strokeStyle = isDark
+              ? "rgba(165, 180, 252, 0.09)"
+              : "rgba(99, 102, 241, 0.08)";
+            ctx.lineWidth = 0.75;
+            ctx.stroke();
+          });
+
+          // ==========================================
+          // 5. DEPTH-LAYERED STARS
+          // ==========================================
+          nodes.forEach((node, idx) => {
+            const parallaxY = (node.y - scrollOffset * node.depth * 1.6 + height * 10) % height;
+            const twinkle = Math.sin(time * node.twinkleSpeed + node.phase);
+            const alpha = Math.min(
+              1,
+              Math.max(0.08, node.baseAlpha + twinkle * (node.tier === "fg" ? 0.25 : 0.1))
+            );
+
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(node.x, parallaxY, node.size, 0, Math.PI * 2);
+
+            if (isDark) {
+              ctx.fillStyle = `rgba(224, 231, 255, ${alpha})`;
+              if (node.isAnchor) {
+                ctx.shadowBlur = 6;
+                ctx.shadowColor = `rgba(129, 140, 248, ${alpha * 0.7})`;
+              }
+            } else {
+              if (idx % 2 === 0) {
+                ctx.fillStyle = `rgba(79, 70, 229, ${alpha * 0.65})`;
+              } else {
+                ctx.fillStyle = `rgba(6, 182, 212, ${alpha * 0.65})`;
+              }
+            }
+
+            ctx.fill();
+            ctx.restore();
+          });
+
+          if (!prefersReducedMotion) {
+            requestAnimationFrame(render);
+          }
+        }
+
+        requestAnimationFrame(render);
+
+        // Explicitly re-render immediately on theme change
+        window.addEventListener("themechange", () => {
+          render(performance.now());
+        });
+      })();
     </script>
   </body>
 </html>

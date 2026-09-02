@@ -84,12 +84,12 @@ time,
 mark,
 audio,
 video {
- margin: 0;
- padding: 0;
- border: 0;
- font-size: 100%;
- font: inherit;
- vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -104,108 +104,149 @@ hgroup,
 menu,
 nav,
 section {
- display: block;
+  display: block;
 }
 
 ol,
 ul {
- list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
- quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
- content: "";
- content: none;
+  content: "";
+  content: none;
 }
 
 table {
- border-collapse: collapse;
- border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /******************
-     THEME 
+     THEME SYSTEM
 *******************/
 :root {
- /*=============== 
-        COLORS 
+  /*=============== 
+        LIGHT MODE (Airy Digital Constellation)
     =================*/
- /* Primary colors */
- --p-20: hsl(213, 100%, 98%);
- --p-50: hsl(215, 100%, 97%);
- --p-100: hsl(215, 100%, 94%);
- --p-200: hsl(216, 93%, 89%);
- --p-300: hsl(219, 91%, 82%);
- --p-400: hsl(224, 86%, 74%);
- --p-450: hsl(198, 81%, 63%);
- --p-500: hsl(228, 81%, 63%);
- --p-500-code: 228, 81%, 63%;
- --p-600: hsl(233, 73%, 59%);
- --p-600-code: 233, 73%, 59%;
- --p-700: hsl(234, 56%, 51%);
- --p-700-code: 234, 56%, 51%;
- --p-800: hsl(233, 53%, 41%);
- --p-900: hsl(231, 46%, 34%);
- --p-900-code: 231, 46%, 34%;
- --p-950: hsl(233, 45%, 20%);
- --p-950-code: 233, 45%, 20%;
+  --foreground-color: #f6f9fd;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-surface: #f1f5f9;
+  --card-border: #e2e8f0;
+  --navbar-bg: rgba(246, 249, 253, 0.88);
 
- /* Neutrals */
- --n-50: hsl(210, 14%, 97%);
- --n-500: hsl(215, 16%, 47%);
- --n-600: hsl(215, 16%, 35%);
- --foreground-color: hsl(0, 0%, 100%); /* background color */
+  /* Primary Brand Tones */
+  --p-20: #f8fafc;
+  --p-50: #f1f5f9;
+  --p-100: #e2e8f0;
+  --p-200: #cbd5e1;
+  --p-300: #94a3b8;
+  --p-400: #6366f1;
+  --p-450: #38bdf8;
+  --p-500: #4f46e5;
+  --p-600: #4338ca;
+  --p-700: #3730a3;
+  --p-800: #312e81;
+  --p-900: #1e1b4b;
+  --p-950: #0f172a; /* Deep, clear dark-slate text */
 
- /* Gradients */
- --main-gradient-color: linear-gradient(
-  to right,
-  var(--p-450),
-  var(--p-500)
- );
- --gradient-color: linear-gradient(
-  var(--foreground-color) 10%,
-  var(--p-100)
- );
+  /* RGB numbers for shadow & opacity */
+  --p-500-code: 79, 70, 229;
+  --p-600-code: 67, 56, 202;
+  --p-700-code: 55, 48, 163;
+  --p-900-code: 30, 27, 75;
+  --p-950-code: 15, 23, 42;
 
- /*================================= 
-        FONTS -  Sử dụng Scale 1.125
+  /* Neutrals */
+  --n-50: #f8fafc;
+  --n-500: #64748b;
+  --n-600: #334155;
+
+  /* Gradients */
+  --main-gradient-color: linear-gradient(
+    135deg,
+    #4f46e5 0%,
+    #06b6d4 100%
+  );
+  --gradient-color: linear-gradient(
+    var(--foreground-color) 10%,
+    #e2e8f0
+  );
+
+  /*================================= 
+        TYPOGRAPHY - Scale 1.125
     =================================*/
- /* 32px */
- --h1-font-size: 2rem;
- /* 36px */
- --h1-line-height: 2.25rem;
+  --h1-font-size: 2rem;
+  --h1-line-height: 2.25rem;
 
- /* 26px */
- --h2-font-size: 1.6rem;
- /* 32px */
- --h2-line-height: 2rem;
+  --h2-font-size: 1.6rem;
+  --h2-line-height: 2rem;
 
- /* 20px */
- --h3-font-size: 1.266rem;
- /* 24px */
- --h3-line-height: 1.5rem;
+  --h3-font-size: 1.266rem;
+  --h3-line-height: 1.5rem;
 
- /* 18px */
- --h4-font-size: 1.125rem;
- /* 16px */
- --h4-line-height: 1.5rem;
+  --h4-font-size: 1.125rem;
+  --h4-line-height: 1.5rem;
 
- /* 16px */
- --p-font-size: 1rem;
- /* 24px */
- --p-line-height: 1.5rem;
+  --p-font-size: 1rem;
+  --p-line-height: 1.5rem;
 
- --p-letter-spacing: 0.025rem;
+  --p-letter-spacing: 0.025rem;
 
- /* 12px */
- --caption-font-size: 0.875rem;
- /* 16px */
- --caption-line-height: 1rem;
+  --caption-font-size: 0.875rem;
+  --caption-line-height: 1rem;
+}
+
+/* ==========================================
+   DARK MODE (Deep Space Digital Constellation)
+   ========================================== */
+[data-theme="dark"],
+body[data-theme="dark"] {
+  --foreground-color: #070913;
+  --card-bg: rgba(14, 20, 36, 0.78);
+  --card-surface: rgba(20, 27, 48, 0.72);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --navbar-bg: rgba(7, 9, 19, 0.88);
+
+  --p-20: rgba(255, 255, 255, 0.03);
+  --p-50: rgba(255, 255, 255, 0.06);
+  --p-100: rgba(255, 255, 255, 0.1);
+  --p-200: rgba(255, 255, 255, 0.18);
+  --p-300: #818cf8;
+  --p-400: #60a5fa;
+  --p-450: #38bdf8;
+  --p-500: #818cf8;
+  --p-600: #818cf8;
+  --p-700: #a5b4fc;
+  --p-800: #c7d2fe;
+  --p-900: #e0e7ff;
+  --p-950: #f8fafc; /* Luminous crisp off-white text */
+
+  --p-500-code: 129, 140, 248;
+  --p-600-code: 129, 140, 248;
+  --p-700-code: 165, 180, 252;
+  --p-900-code: 224, 231, 255;
+  --p-950-code: 248, 250, 252;
+
+  --n-50: rgba(255, 255, 255, 0.04);
+  --n-500: #94a3b8;
+  --n-600: #cbd5e1;
+
+  --main-gradient-color: linear-gradient(
+    135deg,
+    #6366f1 0%,
+    #0ea5e9 100%
+  );
+  --gradient-color: linear-gradient(
+    var(--foreground-color) 10%,
+    #0f172a
+  );
 }

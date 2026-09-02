@@ -23,18 +23,12 @@
 }
 
 body {
-  /* background pattern */
   background-color: var(--foreground-color);
-  background-image: radial-gradient(
-      hsla(var(--p-500-code), 0.1) 1.5px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      hsla(var(--p-700-code), 0.1) 1.5px,
-      var(--foreground-color) 1.5px
-    );
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
+  color: var(--p-950);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -55,10 +49,18 @@ section {
   gap: 16px;
 }
 
+.section__header p {
+  text-align: center;
+  max-width: 80ch;
+  color: var(--n-500);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+}
+
 .section__title {
   font-size: var(--h1-font-size);
   line-height: var(--h1-line-height);
-  font-weight: bold;
+  font-weight: 700;
   color: var(--p-950);
   text-transform: capitalize;
 }
@@ -71,6 +73,34 @@ section {
 
 a {
   text-decoration: none;
+}
+
+/* ==========================================
+   Full-Page Galaxy & Cosmic Dust Canvas
+   ========================================== */
+#galaxy-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none !important;
+  z-index: -2;
+  display: block;
+}
+
+/* ==========================================
+   Interactive Constellation Cursor Particles
+   ========================================== */
+#cursor-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+  display: block !important;
 }
 
 /* ==========================================
@@ -88,7 +118,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px hsla(var(--p-900-code), 0.28);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.28);
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px);
@@ -107,7 +137,7 @@ a {
 .back-to-top:hover {
   background: var(--p-700);
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px hsla(var(--p-900-code), 0.38);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.38);
 }
 
 .back-to-top svg {
@@ -129,3 +159,217 @@ a {
   }
 }
 
+/* ==========================================
+   Toast Notification (Top-Right under navbar)
+   ========================================== */
+.toast {
+  position: fixed;
+  top: 76px;
+  right: 24px;
+  transform: translateY(-8px);
+  background: var(--card-bg);
+  color: var(--p-950);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.16);
+  border: 1px solid var(--card-border);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2000;
+  pointer-events: none;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast svg {
+  width: 15px;
+  height: 15px;
+  color: hsl(142, 76%, 55%);
+}
+
+@media (max-width: 640px) {
+  .toast {
+    top: 70px;
+    right: 16px;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+}
+
+/* ==========================================
+   Copy Email Button
+   ========================================== */
+.copy-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--p-50);
+  border: 1px solid var(--p-100);
+  color: var(--p-700);
+  font-size: 0.775rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.copy-email-btn--icon {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 6px;
+}
+
+.copy-email-btn:hover {
+  background: var(--p-100);
+  border-color: var(--p-300);
+  color: var(--p-950);
+  transform: translateY(-1px);
+}
+
+.copy-email-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ==========================================
+   Global High-Specificity Deep Space Overrides
+   ========================================== */
+[data-theme="dark"] body {
+  background-color: var(--foreground-color);
+  color: var(--p-950);
+}
+
+[data-theme="dark"] .navbar {
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .header__column--left .header_title,
+[data-theme="dark"] .header__column--right .header_title,
+[data-theme="dark"] .section__title,
+[data-theme="dark"] .skills__grid_item_header h2,
+[data-theme="dark"] .projects__card_title,
+[data-theme="dark"] .footer__title {
+  color: var(--p-950) !important;
+}
+
+[data-theme="dark"] .header__column--right a,
+[data-theme="dark"] .header__container span {
+  color: var(--p-950);
+}
+
+[data-theme="dark"] .header__badge_container .badge {
+  background-color: var(--p-50);
+  color: var(--p-950);
+  border: 1px solid var(--p-100);
+}
+
+[data-theme="dark"] .aboutMe__container {
+  background-color: rgba(14, 20, 36, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .aboutMe__content_container {
+  background-color: var(--card-bg) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .aboutMe__content_container h1 {
+  color: var(--p-400) !important;
+}
+
+[data-theme="dark"] .aboutMe__content_container p {
+  color: var(--n-600) !important;
+}
+
+[data-theme="dark"] .skills__grid_item {
+  background-color: var(--p-20);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .skills__edu_card,
+[data-theme="dark"] .softSkills__card,
+[data-theme="dark"] .icon-badges,
+[data-theme="dark"] .skills__tech_cat_item,
+[data-theme="dark"] .footer__contact-item {
+  background-color: var(--card-bg) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--p-950) !important;
+}
+
+[data-theme="dark"] .skills__edu_title,
+[data-theme="dark"] .softSkills__title,
+[data-theme="dark"] .icon-badges span {
+  color: var(--p-950) !important;
+}
+
+[data-theme="dark"] .projects_card {
+  background-color: var(--card-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .projects__card_description {
+  color: var(--n-600) !important;
+}
+
+[data-theme="dark"] .tech_badge {
+  background-color: var(--p-50);
+  color: var(--p-400);
+  border-color: var(--p-100);
+}
+
+[data-theme="dark"] .project_btn--outline {
+  color: var(--p-950);
+  border-color: var(--p-200);
+}
+
+[data-theme="dark"] .project_btn--outline:hover {
+  background-color: var(--p-50);
+  border-color: var(--p-400);
+  color: var(--p-400);
+}
+
+[data-theme="dark"] .outlineButton {
+  border-color: var(--p-400);
+  color: var(--p-400);
+}
+
+[data-theme="dark"] .outlineButton:hover {
+  background-color: var(--p-50);
+}
+
+[data-theme="dark"] .toast {
+  background-color: var(--p-50);
+  color: var(--p-950);
+  border: 1px solid var(--p-100);
+}

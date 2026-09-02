@@ -42,20 +42,22 @@ footer {
   gap: 8px;
   padding: 8px 16px;
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--card-bg);
   border: 1px solid var(--p-100);
   color: var(--p-950);
   font-weight: 500;
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px hsla(var(--p-950-code), 0.04);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04);
   transition: all 0.2s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .footer__contact-item:hover {
   border-color: var(--p-400);
   color: var(--p-600);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px hsla(var(--p-950-code), 0.08);
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.08);
 }
 
 .footer__contact-item svg {
